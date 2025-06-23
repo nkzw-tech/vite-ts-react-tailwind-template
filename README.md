@@ -11,13 +11,13 @@ Read [the blog post about this template](https://cpojer.net/posts/fastest-fronte
 
 - [Vite](https://vitejs.dev/)
 - [React](https://reactjs.org/) with [React Compiler](https://react.dev/learn/react-compiler) enabled
+- [Relay](https://relay.dev/) for data fetching
 - [Tailwind](https://tailwindcss.com/)
 - [fbtee](https://github.com/nkzw-tech/fbtee) for i18n
 - [Better Auth](https://www.better-auth.com/) for authentication
 - [React Router](https://reactrouter.com/)
 - [TypeScript](https://www.typescriptlang.org)
 - [pnpm](https://pnpm.io/)
-- _(Optional)_ [Relay](https://relay.dev/) for data fetching -> check out the [`with-relay` branch](https://github.com/nkzw-tech/web-app-template/tree/with-relay).
 
 Check out the [`nkzw-tech/server-template`](https://github.com/nkzw-tech/server-template) for a GraphQL based server with Pothos and Prisma, or the [`nkzw-tech/expo-app-template`](https://github.com/nkzw-tech/expo-app-template) for building mobile apps.
 
@@ -31,6 +31,10 @@ Check out the [`nkzw-tech/server-template`](https://github.com/nkzw-tech/server-
 - `pnpm build` for production builds.
 
 _Note: You can install `pnpm` via `homebrew` on macOS: `brew install pnpm`._
+
+## Relay Setup
+
+By default, this template expects the [`nkzw-tech/server-template`](https://github.com/nkzw-tech/server-template) to be located side-by-side with this repository. You can adjust the location of the GraphQL schema in your [`relay.config.js`](https://github.com/nkzw-tech/web-app-template/blob/with-relay/relay.config.json#L4) file.
 
 ## Protips for the fastest Developer Experience
 

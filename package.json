@@ -10,7 +10,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite dev",
-    "dev:setup": "pnpm fbtee",
+    "dev:setup": "pnpm relay && pnpm fbtee",
     "fbtee": "pnpm run fbtee:manifest && pnpm run fbtee:collect && pnpm run fbtee:translate",
     "fbtee:collect": "fbtee collect --manifest < .src_manifest.json > source_strings.json",
     "fbtee:manifest": "fbtee manifest --src src",
@@ -19,6 +19,7 @@
     "preinstall": "command -v git >/dev/null 2>&1 && git config core.hooksPath git-hooks || exit 0",
     "lint": "eslint --cache .",
     "lint:format": "prettier --experimental-cli --cache --check .",
+    "relay": "pnpm relay-compiler",
     "test": "npm-run-all --parallel tsc:check vitest:run lint lint:format",
     "tsc:check": "tsc",
     "vitest:run": "vitest run"
@@ -29,12 +30,16 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "@nkzw/core": "^1.2.1",
     "@nkzw/define-env": "^1.1.0",
     "better-auth": "^1.2.10",
     "fbtee": "^0.3.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.6.2"
+    "react-error-boundary": "^6.0.0",
+    "react-relay": "^20.0.0",
+    "react-router": "^7.6.2",
+    "relay-runtime": "^20.0.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
@@ -46,14 +51,18 @@
     "@types/node": "^24.0.4",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@types/react-relay": "^18.2.1",
+    "@types/relay-runtime": "^19.0.2",
     "@vitejs/plugin-react": "^4.6.0",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
+    "babel-plugin-relay": "^20.0.0",
     "eslint": "^9.29.0",
     "npm-run-all2": "^8.0.4",
     "postcss": "^8.5.6",
     "prettier": "^3.6.1",
     "prettier-plugin-packagejson": "^2.5.16",
     "prettier-plugin-tailwindcss": "^0.6.13",
+    "relay-compiler": "^20.0.0",
     "tailwindcss": "^4.1.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",

@@ -9,3 +9,4 @@ source_strings.json
 src/translations
 tsconfig.tsbuildinfo
 vite.config.ts.timestamp-*
+src/__generated__/
